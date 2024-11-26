@@ -263,6 +263,7 @@ sftp-config.json
 
 /tmp/*
 sftp-config.json
+docker/data/
 docker/data/milvus-etcd/member/snap/db
 docker/data/milvus-etcd/member/wal/0000000000000000-0000000000000000.wal
 docker/data/milvus-minio/.minio.sys/buckets/.bloomcycle.bin/xl.meta
