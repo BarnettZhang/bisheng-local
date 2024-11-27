@@ -75,45 +75,15 @@ export default function MainLayout() {
         <div className="bg-background-main w-full h-screen">
             <div className="flex justify-between h-[64px] bg-background-main relative z-[21]">
                 <div className="flex h-9 my-[14px]">
-                    <Link className="inline-block" to='/'>
+                    <Link className="inline-block" to="https://28.7.168.114" target="_blank" rel="noopener noreferrer">
                         {/* @ts-ignore */}
-                        <img src={__APP_ENV__.BASE_URL + '/login-logo-small.png'} className="w-[104px] ml-[38px] rounded dark:w-[104px]" alt="" />
+                        <img src={__APP_ENV__.BASE_URL + '/login-logo-small.svg'} className="w-[129px] ml-[20px] rounded dark:w-[104px]" alt="" />
                     </Link>
                 </div>
                 <div>
                     <HeaderMenu />
                 </div>
                 <div className="flex w-fit relative z-10">
-                    <div className="flex">
-                        <TooltipProvider>
-                            <Tooltip>
-                                <TooltipTrigger className="h-8 w-8 bg-header-icon rounded-lg cursor-pointer my-4" onClick={() => setDark(!dark)}>
-                                    <div className="">
-                                        {dark ? (
-                                            <SunIcon className="side-bar-button-size dark:text-slate-50 mx-auto w-[13px] h-[13px]" />
-                                        ) : (
-                                            <MoonIcon className="side-bar-button-size mx-auto w-[17px] h-[17px]" />
-                                        )}
-                                    </div>
-                                </TooltipTrigger>
-                                <TooltipContent><p>{t('menu.themeSwitch')}</p></TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
-                        <Separator className="mx-[4px] dark:bg-[#111111]" orientation="vertical" />
-                        <TooltipProvider>
-                            <Tooltip>
-                                <TooltipTrigger className="h-8 w-8 bg-header-icon rounded-lg cursor-pointer my-4" onClick={changLanguage}>
-                                    <div className="">
-                                        {language === 'en'
-                                            ? <EnIcon className="side-bar-button-size dark:text-slate-50 mx-auto w-[19px] h-[19px]" />
-                                            : <Globe className="side-bar-button-size dark:text-slate-50 mx-auto w-[17px] h-[17px]" />}
-                                    </div>
-                                </TooltipTrigger>
-                                <TooltipContent><p>{options[language]}</p></TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
-                        <Separator className="mx-[23px] h-6 border-l my-5 border-[#dddddd]" orientation="vertical" />
-                    </div>
                     <div className="flex items-center h-7 my-4">
                         {/* @ts-ignore */}
                         <img className="h-7 w-7 rounded-2xl mr-4" src={__APP_ENV__.BASE_URL + '/user.png'} alt="" />
@@ -186,33 +156,6 @@ export default function MainLayout() {
                             </>
                         }
                     </nav>
-                    {!appConfig.noFace && <div className="absolute left-0 bottom-0 w-[180px] p-2">
-                        <div className="help flex items-between my-3">
-                            <TooltipProvider>
-                                <Tooltip>
-                                    <TooltipTrigger className="h-[72px] w-[78px] cursor-pointer bg-background-tip rounded-lg hover:bg-[#1b1f23] hover:text-[white] transition-all dark:hover:bg-background-tip-darkhover">
-                                        <Link to={"https://github.com/dataelement/bisheng"} target="_blank">
-                                            <GithubIcon className="side-bar-button-size mx-auto w-5 h-5 " />
-                                            <span className="block text-[12px] mt-[8px] font-bold">{t("menu.github")}</span>
-                                        </Link>
-                                    </TooltipTrigger>
-                                    <TooltipContent><p>{t("menu.github")}</p></TooltipContent>
-                                </Tooltip>
-                            </TooltipProvider>
-                            <Separator className="mx-1" orientation="vertical" />
-                            <TooltipProvider>
-                                <Tooltip>
-                                    <TooltipTrigger className="h-[72px] w-[78px] cursor-pointer bg-background-tip rounded-lg p-0 align-top hover:bg-[#0055e3] hover:text-[white]  transition-all">
-                                        <Link className="m-0 p-0" to={"https://m7a7tqsztt.feishu.cn/wiki/ZxW6wZyAJicX4WkG0NqcWsbynde"} target="_blank">
-                                            <BookOpenIcon className=" mx-auto w-5 h-5" />
-                                            <span className="block text-[12px] mt-[8px] font-bold">{t("menu.bookopen")}</span>
-                                        </Link>
-                                    </TooltipTrigger>
-                                    <TooltipContent><p>{t('menu.document')}</p></TooltipContent>
-                                </Tooltip>
-                            </TooltipProvider>
-                        </div>
-                    </div>}
                 </div>
                 <div className="flex-1 bg-background-main-content rounded-lg w-[calc(100vw-184px)]">
                     <ErrorBoundary
