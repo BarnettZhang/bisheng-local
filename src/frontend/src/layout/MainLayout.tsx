@@ -75,7 +75,7 @@ export default function MainLayout() {
         <div className="bg-background-main w-full h-screen">
             <div className="flex justify-between h-[64px] bg-background-main relative z-[21]">
                 <div className="flex h-9 my-[14px]">
-                    <Link className="inline-block" to="https://28.7.168.114" target="_blank" rel="noopener noreferrer">
+                    <Link className="inline-block" to="http://28.7.168.114" rel="noopener noreferrer">
                         {/* @ts-ignore */}
                         <img src={__APP_ENV__.BASE_URL + '/login-logo-small.svg'} className="w-[129px] ml-[20px] rounded dark:w-[104px]" alt="" />
                     </Link>
