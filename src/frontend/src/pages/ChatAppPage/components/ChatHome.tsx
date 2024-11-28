@@ -73,7 +73,7 @@ export default function HomePage({ onSelect }) {
     // const [cardBoxWidth, cardboxRef] = useAutoWidth()
     {/* @ts-ignore */ }
     return <div className="h-full overflow-hidden bs-chat-bg" style={{ backgroundImage: `url(${__APP_ENV__.BASE_URL}/points.png)` }}>
-        <div className="flex justify-center place-items-center gap-20">
+        <div className="flex justify-center place-items-center gap-16">
             {/* @ts-ignore */}
             <img className="w-[138px]" src={__APP_ENV__.BASE_URL + '/application-start-logo.png'} alt="" />
             <p className="text-2xl leading-[50px] dark:text-[#D4D4D4]">
