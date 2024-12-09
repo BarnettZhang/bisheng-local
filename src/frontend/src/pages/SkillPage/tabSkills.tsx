@@ -5,7 +5,7 @@ import SelectSearch from "@/components/bs-ui/select/select";
 import { useToast } from "@/components/bs-ui/toast/use-toast";
 import { useContext, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import CardComponent from "../../components/bs-comp/cardComponent";
 import { MoveOneIcon } from "../../components/bs-icons/moveOne";
 import { Button } from "../../components/bs-ui/button";
@@ -83,7 +83,24 @@ export default function Skills() {
     }
 
     return <div className="h-full relative">
-        <div className="px-10 py-10 h-full overflow-y-scroll scrollbar-hide relative bg-background-main border-t">
+        <div className="px-[32px] py-[16px] h-full overflow-y-scroll scrollbar-hide relative bg-[#F5F5F5]">
+            <div className="build-assistant-tab flex justify-center h-[38px] bg-[#EEEEEE] mb-[18px] rounded-md items-center relative">
+                <div className="my-[4px] ml-[4px] w-[33%]">
+                    <NavLink to='/build/assist' className="group flex gap-2 justify-center items-center px-8 py-[5px] rounded-md navlink">
+                        <span className="text-sm font-bold text-muted-foreground group-hover:text-primary dark:group-hover:text-[#fff]">{t('build.assistant')}</span>
+                    </NavLink>
+                </div>
+                <div className="my-[4px] mx-[12px] w-[33%]">
+                    <NavLink to='/build/skills' className="group flex gap-2 justify-center items-center px-8 py-[5px] rounded-md navlink">
+                        <span className="text-sm font-bold text-muted-foreground group-hover:text-primary dark:group-hover:text-[#fff]">{t('build.skill')}</span>
+                    </NavLink>
+                </div>
+                <div className="my-[4px] mr-[4px] w-[33%]">
+                    <NavLink to='/build/tools' className="group flex gap-2 justify-center items-center px-8 py-[5px] rounded-md navlink">
+                        <span className="text-sm font-bold text-muted-foreground group-hover:text-primary dark:group-hover:text-[#fff]">{t('build.tools')}</span>
+                    </NavLink>
+                </div>
+            </div>
             <div className="flex space-x-4">
                 <SearchInput className="w-64" placeholder={t('skills.skillSearch')} onChange={(e) => search(e.target.value)}></SearchInput>
                 <SelectSearch value={!selectLabel.value ? '' : selectLabel.value} options={allOptions}
@@ -163,7 +180,7 @@ export default function Skills() {
         {/* 添加模板 */}
         <CreateTemp flow={flowRef.current} open={tempOpen} setOpen={() => toggleTempModal()} onCreated={() => { }} ></CreateTemp>
         {/* footer */}
-        <div className="flex justify-between absolute bottom-0 left-0 w-full bg-background-main h-16 items-center px-10">
+        <div className="flex justify-between absolute bottom-0 left-0 w-full bg-[#F5F5F5] h-16 items-center px-10">
             <p className="text-sm text-muted-foreground break-keep">{t('skills.manageProjects')}</p>
             <AutoPagination className="m-0 w-auto justify-end" page={page} pageSize={pageSize} total={total} onChange={setPage}></AutoPagination>
         </div>

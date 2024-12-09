@@ -981,7 +981,7 @@
   }
 
   .navlink.active{
-    @apply bg-[#fff] text-primary shadow-sm dark:bg-[#34353A] dark:text-[#FFFFFF] dark:shadow-sm
+    @apply bg-[#FFEFEF] text-black font-semibold dark:bg-[#34353A] dark:text-[#FFFFFF] dark:shadow-sm
   }
 
   /* new ui */

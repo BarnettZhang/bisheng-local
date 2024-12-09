@@ -15,6 +15,7 @@ import ModelConfig from "./ModelConfig"
 import SystemModelConfig from "./SystemModelConfig"
 import { useToast } from "@/components/bs-ui/toast/use-toast"
 import { captureAndAlertRequestErrorHoc } from "@/controllers/request"
+import { NavLink } from "react-router-dom"
 
 function CustomTableRow({ data, index, user, onModel, onCheck }) {
     const { t } = useTranslation()
@@ -139,6 +140,18 @@ export default function Management() {
             </div>
         )}
         <div className="h-full overflow-y-auto">
+            <div className="build-assistant-tab flex justify-center h-[38px] bg-[#EEEEEE] mb-[18px] rounded-md items-center relative">
+                <div className="my-[4px] ml-[4px] w-[50%]">
+                    <NavLink to={'/model/management'} className="group flex gap-2 justify-center items-center px-8 py-[5px] rounded-md navlink">
+                        <span className="text-sm font-bold text-muted-foreground group-hover:text-primary dark:group-hover:text-[#fff]">{t('model.modelManagement')}</span>
+                    </NavLink>
+                </div>
+                <div className="my-[4px] mr-[4px] w-[50%]">
+                    <NavLink to={'/model/finetune'} className="group flex gap-2 justify-center items-center px-8 py-[5px] rounded-md navlink">
+                        <span className="text-sm font-bold text-muted-foreground group-hover:text-primary dark:group-hover:text-[#fff]">{t('model.modelFineTune')}</span>
+                    </NavLink>
+                </div>
+            </div>
             <div className="flex justify-end gap-4">
                 {user.role === 'admin' && <Button className="text-red-500" onClick={() => setSystemModel(true)} variant="secondary">
                     <SettingIcon className="text-red-500" />

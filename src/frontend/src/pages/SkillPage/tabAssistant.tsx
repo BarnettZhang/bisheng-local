@@ -9,7 +9,7 @@ import { captureAndAlertRequestErrorHoc } from "@/controllers/request";
 import { useContext, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useQuery } from 'react-query';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import CardComponent from "../../components/bs-comp/cardComponent";
 import { SearchInput } from "../../components/bs-ui/input";
 import AutoPagination from "../../components/bs-ui/pagination/autoPagination";
@@ -17,6 +17,7 @@ import { AssistantItemDB, changeAssistantStatusApi, deleteAssistantApi, getAssis
 import { FlowType } from "../../types/flow";
 import { useTable } from "../../util/hook";
 import CreateAssistant from "./components/CreateAssistant";
+import { TabIcon } from "@/components/bs-icons";
 
 export default function Assistants() {
     const { t } = useTranslation()
@@ -54,8 +55,25 @@ export default function Assistants() {
         filterData({ tag_id: id })
     }
 
-    return <div className="h-full relative bg-background-main border-t">
-        <div className="px-10 py-10 h-full overflow-y-scroll scrollbar-hide relative">
+    return <div className="h-full relative bg-[#F5F5F5]">
+        <div className="px-[32px] py-[16px] h-full overflow-y-scroll scrollbar-hide relative">
+            <div className="build-assistant-tab flex justify-center h-[38px] bg-[#EEEEEE] mb-[18px] rounded-md items-center relative">
+                <div className="my-[4px] ml-[4px] w-[33%]">
+                    <NavLink to='/build/assist' className="group flex gap-2 justify-center items-center px-8 py-[5px] rounded-md navlink">
+                        <span className="text-sm font-bold text-muted-foreground group-hover:text-primary dark:group-hover:text-[#fff]">{t('build.assistant')}</span>
+                    </NavLink>
+                </div>
+                <div className="my-[4px] mx-[12px] w-[33%]">
+                    <NavLink to='/build/skills' className="group flex gap-2 justify-center items-center px-8 py-[5px] rounded-md navlink">
+                        <span className="text-sm font-bold text-muted-foreground group-hover:text-primary dark:group-hover:text-[#fff]">{t('build.skill')}</span>
+                    </NavLink>
+                </div>
+                <div className="my-[4px] mr-[4px] w-[33%]">
+                    <NavLink to='/build/tools' className="group flex gap-2 justify-center items-center px-8 py-[5px] rounded-md navlink">
+                        <span className="text-sm font-bold text-muted-foreground group-hover:text-primary dark:group-hover:text-[#fff]">{t('build.tools')}</span>
+                    </NavLink>
+                </div>
+            </div>
             <div className="flex space-x-4">
                 <SearchInput className="w-64" placeholder={t('build.searchAssistant')} onChange={(e) => search(e.target.value)}></SearchInput>
                 <SelectSearch value={!selectLabel.value ? '' : selectLabel.value} options={allOptions}
@@ -124,7 +142,7 @@ export default function Assistants() {
             }
         </div>
         {/* footer */}
-        <div className="flex justify-between absolute bottom-0 left-0 w-full bg-background-main h-16 items-center px-10">
+        <div className="flex justify-between absolute bottom-0 left-0 w-full bg-[#F5F5F5] h-16 items-center px-10">
             <p className="text-sm text-muted-foreground break-keep">{t('build.manageAssistant')}</p>
             <AutoPagination className="m-0 w-auto justify-end" page={page} pageSize={pageSize} total={total} onChange={setPage}></AutoPagination>
         </div>

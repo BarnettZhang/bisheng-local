@@ -97,7 +97,7 @@ ${t('build.exampleTwo')}
         })
     }
 
-    return <DialogContent className="sm:max-w-[625px] bg-background-login">
+    return <DialogContent className="sm:max-w-[625px] bg-background-main">
         <DialogHeader>
             <DialogTitle>{t('build.establishAssistant')}</DialogTitle>
         </DialogHeader>

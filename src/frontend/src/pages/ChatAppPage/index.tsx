@@ -78,7 +78,7 @@ export default function SkillChatPage() {
     }
 
     return <div className="flex h-full">
-        <div className="h-full w-[220px] relative border-r">
+        <div className="h-full w-[272px] relative border-r">
             <div className="absolute flex top-0 w-full bs-chat-bg bg-background-main-content z-10 p-2">
                 {/* <SkillChatSheet onSelect={handlerSelectFlow}>
                     <div id="newchat" className="flex justify-around items-center w-[200px] h-[48px] rounded-lg px-10 py-2 mx-auto text-center text-sm cursor-pointer bg-background-main-content hover:bg-gray-100 dark:hover:bg-gray-800 relative z-10">
@@ -87,8 +87,8 @@ export default function SkillChatPage() {
                         {t('chat.newChat')}
                     </div>
                 </SkillChatSheet> */}
-                <div onClick={() => handlerSelectFlow(null)} id="newchat" className="flex justify-around items-center w-[200px] h-[48px] rounded-lg px-10 py-2 mx-auto text-center text-sm cursor-pointer bg-background-main-content hover:bg-gray-100 dark:hover:bg-gray-800 relative z-10">
-                    <PlusBoxIcon className="dark:hidden"></PlusBoxIcon>
+                <div onClick={() => handlerSelectFlow(null)} id="newchat" className="flex items-center w-[255px] h-[48px] rounded-lg px-[20px] py-2 gap-[12px] mx-auto text-center text-sm cursor-pointer bg-background-main-content hover:bg-[#E0E0E0] dark:hover:bg-gray-800 relative z-10">
+                    <img src={`${__APP_ENV__.BASE_URL}/new-session.svg`} />
                     <PlusBoxIconDark className="hidden dark:block"></PlusBoxIconDark>
                     {t('chat.newChat')}
                 </div>
@@ -97,11 +97,11 @@ export default function SkillChatPage() {
                 {
                     chatList.map((chat, i) => (
                         <div key={chat.chat_id}
-                            className={`group item w-full rounded-lg mt-2 p-4 relative  hover:bg-[#EDEFF6] cursor-pointer dark:hover:bg-[#34353A] ${location
-                                ? 'bg-[#f9f9fc] dark:bg-[#212122]'
+                            className={`group item w-full rounded-lg mt-2 p-[12px] relative  hover:bg-[#E0E0E0] cursor-pointer dark:hover:bg-[#34353A] ${location
+                                ? 'bg-[transparent] dark:bg-[#212122]'
                                 : (chatId === chat.chat_id
-                                    ? 'bg-[#EDEFF6] dark:bg-[#34353A]'
-                                    : 'bg-[#f9f9fc] dark:bg-[#212122]')}`}
+                                    ? 'bg-[#E0E0E0] dark:bg-[#34353A]'
+                                    : 'bg-[transparent] dark:bg-[#212122]')}`}
                             onClick={() => handleSelectChat(chat)}>
                             <div className="flex place-items-center space-x-3">
                                 <div className=" inline-block bg-purple-500 rounded-md">
@@ -114,9 +114,9 @@ export default function SkillChatPage() {
                                 </div>
                                 <p className="truncate text-sm font-bold leading-6">{chat.flow_name}</p>
                             </div>
-                            <span className="block text-xs text-gray-600 dark:text-[#8D8D8E] mt-3 break-words truncate">{chat.latest_message?.message || ''}</span>
+                            <span className="block text-xs text-gray-600 dark:text-[#8D8D8E] mt-3 ml-[36px] break-words truncate">{chat.latest_message?.message || ''}</span>
                             <div className="mt-6">
-                                <span className="text-gray-400 text-xs absolute bottom-2 left-4">{formatStrTime(chat.update_time, 'MM 月 dd 日')}</span>
+                                <span className="text-gray-400 text-xs absolute bottom-2 left-[48px]">{formatStrTime(chat.update_time, 'MM 月 dd 日')}</span>
                                 <Trash2 size={14} className="absolute bottom-2 right-2 text-gray-400 hidden group-hover:block" onClick={(e) => handleDeleteChat(e, chat.chat_id)}></Trash2>
                             </div>
                         </div>

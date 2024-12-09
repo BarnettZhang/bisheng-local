@@ -72,12 +72,15 @@ export default function HomePage({ onSelect }) {
 
     // const [cardBoxWidth, cardboxRef] = useAutoWidth()
     {/* @ts-ignore */ }
-    return <div className="h-full overflow-hidden bs-chat-bg" style={{ backgroundImage: `url(${__APP_ENV__.BASE_URL}/points.png)` }}>
-        <div className="flex justify-center place-items-center gap-16">
+    return <div className="h-full overflow-hidden bs-chat-bg">
+        <div className="flex flex-col justify-center items-center h-[320px] w-full">
             {/* @ts-ignore */}
-            <img className="w-[138px]" src={__APP_ENV__.BASE_URL + '/application-start-logo.png'} alt="" />
+            <div className="flex justify-center gap-[12px]" >
+              <div className="text-[40px] leading-[56px]">你好</div>
+              <img src={__APP_ENV__.BASE_URL + '/wave.svg'} className="w-[55px] h-[55px]" alt="" />
+            </div>
             <p className="text-2xl leading-[50px] dark:text-[#D4D4D4]">
-                {t('chat.chooseOne')}<b className=" dark:text-[#D4D4D4] font-semibold">{t('chat.dialogue')}</b><br />{t('chat.start')}<b className=" dark:text-[#D4D4D4] font-semibold">{t('chat.wenqingruijian')}</b>
+                选择一个对话，开始智能办公吧
             </p>
         </div>
         <div className="flex justify-center">

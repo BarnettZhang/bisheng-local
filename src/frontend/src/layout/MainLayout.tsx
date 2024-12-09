@@ -73,11 +73,11 @@ export default function MainLayout() {
 
     return <div className="flex">
         <div className="bg-background-main w-full h-screen">
-            <div className="flex justify-between h-[64px] bg-background-main relative z-[21]">
-                <div className="flex h-9 my-[14px]">
+            <div className="flex justify-between h-[64px] bg-background-main relative z-[21] border-b">
+                <div className="flex h-[30px] my-[14px]">
                     <Link className="inline-block" to="http://28.7.168.114" rel="noopener noreferrer">
                         {/* @ts-ignore */}
-                        <img src={__APP_ENV__.BASE_URL + '/login-logo-small.svg'} className="w-[129px] ml-[20px] rounded dark:w-[104px]" alt="" />
+                        <img src={__APP_ENV__.BASE_URL + '/login-logo-small.svg'} className="w-[280px] h-[30px] ml-[20px] rounded dark:w-[104px]" alt="" />
                     </Link>
                 </div>
                 <div>
@@ -100,64 +100,64 @@ export default function MainLayout() {
                 </div>
             </div>
             <div className="flex" style={{ height: "calc(100vh - 64px)" }}>
-                <div className="relative z-10 bg-background-main h-full w-[184px] min-w-[184px] px-3  shadow-x1 flex justify-between text-center ">
+                <div className="relative z-10 bg-background-main h-full w-[240px] min-w-[240px] px-5 pt-5 shadow-x1 flex justify-between text-center border-r">
                     <nav className="">
-                        <NavLink to='/' className={`navlink inline-flex rounded-lg w-full px-6 hover:bg-nav-hover h-12 mb-[3.5px]`}>
-                            <ApplicationIcon className="h-6 w-6 my-[12px]" /><span className="mx-[14px] max-w-[48px] text-[14px] leading-[48px]">{t('menu.app')}</span>
+                        <NavLink to='/' className={`navlink inline-flex rounded-[4px] w-full hover:bg-nav-hover h-[38px] mb-[12px]`}>
+                            <span className="mx-[12px] max-w-[48px] text-[14px] leading-[38px]">{t('menu.app')}</span>
                         </NavLink>
                         {
                             isMenu('build') &&
-                            <NavLink to='/build' className={`navlink inline-flex rounded-lg w-full px-6 hover:bg-nav-hover h-12 mb-[3.5px]`} >
-                                <TechnologyIcon className="h-6 w-6 my-[12px]" /><span className="mx-[14px] max-w-[48px] text-[14px] leading-[48px]">{t('menu.skills')}</span>
+                            <NavLink to='/build' className={`navlink inline-flex rounded-[4px] w-full hover:bg-nav-hover h-[38px] mb-[12px]`} >
+                                <span className="mx-[12px] max-w-[48px] text-[14px] leading-[38px]">{t('menu.skills')}</span>
                             </NavLink>
                         }
                         {
                             isMenu('knowledge') &&
-                            <NavLink to='/filelib' className={`navlink inline-flex rounded-lg w-full px-6 hover:bg-nav-hover h-12 mb-[3.5px]`}>
-                                <KnowledgeIcon className="h-6 w-6 my-[12px]" /><span className="mx-[14px] max-w-[48px] text-[14px] leading-[48px]">{t('menu.knowledge')}</span>
+                            <NavLink to='/filelib' className={`navlink inline-flex rounded-[4px] w-full hover:bg-nav-hover h-[38px] mb-[12px]`}>
+                                <span className="mx-[12px] max-w-[48px] text-[14px] leading-[38px]">{t('menu.knowledge')}</span>
                             </NavLink>
                         }
                         {
                             user.role === 'admin' && <>
-                                <NavLink to='/dataset' className={`navlink inline-flex rounded-lg w-full px-6 hover:bg-nav-hover h-12 mb-[3.5px]`}>
-                                    <DatasetIcon className="h-6 w-6 my-[12px]" /><span className="mx-[14px] max-w-[48px] text-[14px] leading-[48px]">{t('menu.dataset')}</span>
+                                <NavLink to='/dataset' className={`navlink inline-flex rounded-[4px] w-full hover:bg-nav-hover h-[38px] mb-[12px]`}>
+                                    <span className="mx-[12px] max-w-[48px] text-[14px] leading-[38px]">{t('menu.dataset')}</span>
                                 </NavLink>
                             </>
                         }
                         {
                             isMenu('model') &&
-                            <NavLink to='/model' className={`navlink inline-flex rounded-lg w-full px-6 hover:bg-nav-hover h-12 mb-[3.5px]`}>
-                                <ModelIcon className="h-6 w-6 my-[12px]" /><span className="mx-[14px] max-w-[48px] text-[14px] leading-[48px]">{t('menu.models')}</span>
+                            <NavLink to='/model' className={`navlink inline-flex rounded-[4px] w-full hover:bg-nav-hover h-[38px] mb-[12px]`}>
+                                <span className="mx-[12px] max-w-[48px] text-[14px] leading-[38px]">{t('menu.models')}</span>
                             </NavLink>
                         }
                         {
                             isMenu('evaluation') &&
-                            <NavLink to='/evaluation' className={`navlink inline-flex rounded-lg w-full px-6 hover:bg-nav-hover h-12 mb-[3.5px]`}>
-                                <EvaluatingIcon className="h-6 w-6 my-[12px]" /><span className="mx-[14px] max-w-[48px] text-[14px] leading-[48px]">{t('menu.evaluation')}</span>
+                            <NavLink to='/evaluation' className={`navlink inline-flex rounded-[4px] w-full hover:bg-nav-hover h-[38px] mb-[12px]`}>
+                                <span className="mx-[12px] max-w-[48px] text-[14px] leading-[38px]">{t('menu.evaluation')}</span>
                             </NavLink>
                         }
                         {
-                            <NavLink to='/label' className={`navlink inline-flex rounded-lg w-full px-6 hover:bg-nav-hover h-12 mb-[3.5px]`}>
-                                <LabelIcon className="h-6 w-6 my-[12px]" /><span className="mx-[14px] max-w-[48px] text-[14px] leading-[48px]">标  注</span>
+                            <NavLink to='/label' className={`navlink inline-flex rounded-[4px] w-full hover:bg-nav-hover h-[38px] mb-[12px]`}>
+                                <span className="mx-[12px] max-w-[48px] text-[14px] leading-[38px]">标注</span>
                             </NavLink>
                         }
                         {
                             isAdmin && <>
-                                <NavLink to='/log' className={`navlink inline-flex rounded-lg w-full px-6 hover:bg-nav-hover h-12 mb-[3.5px]`}>
-                                    <LogIcon className="h-6 w-6 my-[12px]" /><span className="mx-[14px] max-w-[48px] text-[14px] leading-[48px]">{t('menu.log')}</span>
+                                <NavLink to='/log' className={`navlink inline-flex rounded-[4px] w-full hover:bg-nav-hover h-[38px] mb-[12px]`}>
+                                    <span className="mx-[12px] max-w-[48px] text-[14px] leading-[38px]">{t('menu.log')}</span>
                                 </NavLink>
                             </>
                         }
                         {
                             isAdmin && <>
-                                <NavLink to='/sys' className={`navlink inline-flex rounded-lg w-full px-6 hover:bg-nav-hover h-12 mb-[3.5px]`}>
-                                    <SystemIcon className="h-6 w-6 my-[12px]" /><span className="mx-[14px] max-w-[48px] text-[14px] leading-[48px]">{t('menu.system')}</span>
+                                <NavLink to='/sys' className={`navlink inline-flex rounded-[4px] w-full hover:bg-nav-hover h-[38px] mb-[12px]`}>
+                                    <span className="mx-[12px] max-w-[48px] text-[14px] leading-[38px]">{t('menu.system')}</span>
                                 </NavLink>
                             </>
                         }
                     </nav>
                 </div>
-                <div className="flex-1 bg-background-main-content rounded-lg w-[calc(100vw-184px)]">
+                <div className="flex-1 bg-background-main-content rounded-[4px] w-[calc(100vw-184px)]">
                     <ErrorBoundary
                         onReset={() => window.location.href = window.location.href}
                         FallbackComponent={CrashErrorComponent}

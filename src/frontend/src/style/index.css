@@ -6,13 +6,13 @@
 @layer base {
 
   :root {
-    --background-login: #fff;
+    --background-login: #F5F5F5;
 
     --text-color: rgba(17, 17, 17, 0.3);
 
-    --background-main: rgba(244, 245, 248, 1);
+    --background-main: #fdfdfd;
 
-    --background-main-content: rgba(255, 255, 255, 1);
+    --background-main-content: #f6f6f6;
 
     --background-tip: white;
 
@@ -22,7 +22,7 @@
 
     --background-new: hsla(240, 14%, 99%, 1);
 
-    --nav-hover: white;
+    --nav-hover: #ffefef;
 
     --header-icon: white;
 
