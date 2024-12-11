@@ -73,7 +73,7 @@ export default function HomePage({ onSelect }) {
     // const [cardBoxWidth, cardboxRef] = useAutoWidth()
     {/* @ts-ignore */ }
     return <div className="h-full overflow-hidden bs-chat-bg">
-        <div className="flex flex-col justify-center items-center h-[320px] w-full">
+        <div className="flex flex-col justify-center items-center h-[200px] w-full">
             {/* @ts-ignore */}
             <div className="flex justify-center gap-[12px]" >
               <div className="text-[40px] leading-[56px]">你好</div>
@@ -103,8 +103,8 @@ export default function HomePage({ onSelect }) {
                 {user.role === 'admin' && <SettingIcon onClick={() => setOpen(true)} className="h-[30px] w-[30px] cursor-pointer" />}
             </div>
         </div>
-        <div className="relative overflow-y-auto h-[calc(100vh-308px)]">
-            <div className="flex flex-wrap gap-2 px-12 scrollbar-hide pt-4 pb-20" >
+        <div className="relative overflow-y-auto h-[calc(100vh-367px)]">
+            <div className="flex flex-wrap gap-2 p-[16px] scrollbar-hide" >
                 {
                     options.length ? options.map((flow, i) => (
                         <CardComponent key={i}
