@@ -88,7 +88,7 @@ export default function HomePage({ onSelect }) {
                 placeholder={t('chat.searchAssistantOrSkill')}
                 className="w-[600px] min-w-[300px] mt-[10px]" />
         </div>
-        <div className="mt-[20px] px-12">
+        <div className="mt-[20px] px-[24px]">
             <div className="flex flex-wrap">
                 <Button variant={chooseId ? "outline" : "default"} className="mb-2 mr-4 h-7" size="sm"
                     onClick={() => { setChooseId(null); loadData(false) }}>{t('all')}</Button>

@@ -100,7 +100,7 @@ export default function MainLayout() {
                 </div>
             </div>
             <div className="flex" style={{ height: "calc(100vh - 64px)" }}>
-                <div className="relative z-10 bg-background-main h-full w-[240px] min-w-[240px] px-5 pt-5 shadow-x1 flex justify-between text-center border-r">
+                <div className="relative z-10 bg-background-main h-full w-[180px] min-w-[180px] px-[12px] pt-[12px] shadow-x1 flex justify-between text-center border-r">
                     <nav className="">
                         <NavLink to='/' className={`navlink inline-flex rounded-[4px] w-full hover:bg-nav-hover h-[38px] mb-[12px]`}>
                             <span className="mx-[12px] max-w-[48px] text-[14px] leading-[38px]">{t('menu.app')}</span>
