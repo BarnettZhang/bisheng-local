@@ -277,7 +277,7 @@ export default function ChatInput({ clear, form, questions, inputForm, wsUrl, on
         // setInputEmpty(textarea.value.trim() === '')
     }
 
-    return <div className="absolute bottom-0 w-full pt-1 bg-[#f5f5f5] dark:bg-[#1B1B1B]">
+    return <div className="absolute bottom-0 w-full pt-1">
         <div className={`relative ${clear && 'pl-9'}`}>
             {/* form */}
             {
